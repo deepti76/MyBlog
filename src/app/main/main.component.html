@@ -1,0 +1,55 @@
+<div class="row" style="margin-top: 10px;height: 100%;">
+    <div class="col-sm-4 text-center" style="border-right: 1px solid grey;background-color: rgb(125, 196, 196);">
+        <img style="width: 300px;"
+            src="https://thumbs.dreamstime.com/b/beautiful-golden-autumn-scenery-trees-golden-leaves-sunshine-scotland-united-kingdom-beautiful-golden-autumn-124278811.jpg"
+            alt="">
+        <div style="margin:20px">
+            Indian Tourism is the rapid growing industry. India is a country which has several unique temples famous for
+            its cultural heritage, various wildlife sanctuaries and it is surrounded by Indian Ocean, Himalayas, Bay of
+            Bengal and Arabian Sea. It’s a Multilingual Country where people speak different languages. Every foreigner
+            has a dream to visit this fascinating country. It has many tourist attractions like waterfalls, Deserts,
+            Famous river bodies like Ganga, Yamuna, and Indus etc.
+
+            India Tourism Campaign was promoted by many Indian Celebrities and its tagline is “Atithi Devo Bhava” which
+            means honoring the guest as God. This industry is based on certain standards which are: Safai(Cleanliness),
+            Surakshaa(Security), Sahyog(Cooperation), Suchna(Information), Sanrachna(Infrastructure), Swagat(Welcome),
+            and Suvidha(Facilitation).
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <form #post="ngForm" id="form" onsubmit="" >
+            <div class="card" style="margin:30px;padding:10px">
+                <div style="margin-top: 5px;">
+                    <label class="form-group">Place Name :</label>
+                    <input class="form-control" id="placeName" name="place" type="text" [(ngModel)]="place.placeName">
+                </div>
+                <div style="margin-top: 10px;">
+                    <label for="">Upload Image :</label>
+                    <input class="form-control" id="image" name="image" type="text" [(ngModel)]="place.image">
+                </div>
+                <div style="margin-top: 10px;">
+                    <label for="">Description :</label>
+                    <textarea class="form-control" id="desc" name="desc" id="" cols="30" rows="5"
+                        [(ngModel)]="place.description"></textarea>
+                </div>
+
+                <button class="btn btn-success" type="submit" id="post" style="margin-top: 10px;" (click)="postPlace()" style="visibility: hidden;">Post New Place</button>
+                <button class="btn btn-success" type="submit" id="edit" style="margin-top: 10px;" (click)="editPlace()" style="visibility: hidden;">Edit New Place</button>
+
+            </div>
+        </form>
+        <div class="row" style="margin-left: 50px;">
+            <div class="card p1 text-center col-sm-5" style="margin: 10px;" *ngFor="let place of places">
+                <div id="placeDet" class="place1" >
+                    {{place.placeName}}
+                   <div style="margin-bottom: 10px;">
+                       <button  class="btn btn-info" style="margin-right: 30px;" (click)="getPlace(place)">edit</button>
+                       <button id="delete" class="btn btn-danger" (click)="deletePlace(place)">delete</button>
+                   </div>
+                </div>
+                <img src="{{place.image}}" style="width: 80%;" alt="">
+                <div>{{place.description}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container-fluid col-lg-4" style="margin-top: 100px;">
+    <form action="" #registerForm="ngForm">
+        <div class="text-center text-white" style="padding: 10px;background-color: rgb(64, 64, 138);"> <span>
+                Registration
+                Form</span>
+        </div>
+        <div style="padding: 10px; background-color: rgb(243, 219, 187);">
+            <div>
+                <label for="fullName">Username :</label>
+                <input class="form-control" name="fullName" [(ngModel)]="register.fullName" #username="ngModel"
+                    required>
+            </div>
+            <div>
+                <label for="phone">Phone :</label>
+                <input class="form-control" name="phone" [(ngModel)]="register.phone" #phone="ngModel" required>
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input class="form-control" type="email" name="email" #email="ngModel" [(ngModel)]="register.email"
+                    required>
+            </div>
+
+            <div>
+                <label for="password">Password :</label>
+                <input class="form-control" type="password" name="password" #password="ngModel"
+                    [(ngModel)]="register.password" required>
+            </div>
+            <div class="form-group  text-center">
+                <button class="btn btn-primary" style="margin-top: 15px;" (click)="validateUser()"
+                    class="btn btn-primary" [disabled]="!registerForm.form.valid">Register</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

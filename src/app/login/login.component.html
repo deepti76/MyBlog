@@ -1,0 +1,29 @@
+<div class="container-fluid col-lg-4" style="margin-top: 100px;">
+    <form class="form" action="" #loginForm="ngForm">
+        <div class="text-center text-white" style="padding: 20px;background-color: #40408a;"> <span> Login
+                Form </span>
+        </div>
+        <div style="padding: 10px; background-color: rgb(243, 219, 187);">
+            <div>
+                <label for="email">Email :</label>
+                <input class="form-control" name="email" type="email" [(ngModel)]="login.email" #username="ngModel" required
+                    readonly onfocus="this.removeAttribute('readonly')">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="password">Password :</label>
+                <input class="form-control" type="password" name="password" #password="ngModel"
+                    [(ngModel)]="login.password" required>
+                    
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-primary" style="margin-right: 270px;" (click)="validateUser()" 
+                [disabled]="!loginForm.form.valid">Login</button>
+                <span style="float: right;">
+                <a routerLink="/resetPass">Forgot Password</a>
+                </span>
+            </div>
+        </div>
+
+    </form>
+
+</div>
