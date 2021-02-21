@@ -22,6 +22,8 @@ export class SharedComponent implements OnInit {
 
         if (value === 'Login') {
             this._router.navigate(['/login']);
+            history.forward();
+
         } else if (value === 'Logout') {
             sessionStorage.clear();
             document.getElementById('login').innerHTML = 'Login';
